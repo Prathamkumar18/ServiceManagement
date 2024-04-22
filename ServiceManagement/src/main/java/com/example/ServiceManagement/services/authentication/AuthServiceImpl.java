@@ -35,7 +35,7 @@ public class AuthServiceImpl implements AuthService{
     }
 
     public Boolean presentByEmail(String email){
-        return userRepository.findFirstByEmail(email)!=null;
+        return userRepository.findByEmail(email)!=null;
     }
 
 }
