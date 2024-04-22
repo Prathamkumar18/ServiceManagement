@@ -25,6 +25,7 @@ public class User {
         userDto.setLastname(lastname);
         userDto.setEmail(email);
         userDto.setRole(role);
+        userDto.setPhone(phone);
         return userDto;
     }
 }

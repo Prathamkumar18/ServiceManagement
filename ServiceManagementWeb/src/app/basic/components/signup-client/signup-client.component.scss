@@ -1,0 +1,67 @@
+/* Styles for the background */
+.bg {
+    background-color: #f0f2f5; /* Set your desired background color */
+    padding: 20px; /* Adjust padding as needed */
+}
+
+/* Styles for the parent container */
+.parent {
+    max-width: 400px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container */
+    background-color: #fff; /* Set background color */
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Styles for the form */
+.child {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for the form items */
+nz-form-item {
+    margin-bottom: 15px; /* Adjust spacing between form items */
+}
+
+/* Styles for the form controls */
+nz-form-control {
+    width: 100%;
+}
+
+/* Styles for the input fields */
+input {
+    width: 100%;
+    padding: 10px; /* Adjust padding as needed */
+    border: 1px solid #d9d9d9; /* Set border color */
+    border-radius: 4px; /* Add rounded corners */
+    transition: border-color 0.3s ease; /* Add transition effect */
+}
+
+input:focus {
+    border-color: #1890ff; /* Change border color on focus */
+}
+
+/* Styles for the button */
+button {
+    width: 100%;
+    padding: 10px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 4px; /* Add rounded corners */
+    background-color: #000; /* Set button background color to black */
+    color: #fff; /* Set button text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+button:hover {
+    background-color: #333; /* Change button background color on hover */
+}
+
+/* Styles for the login link */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px; /* Adjust margin as needed */
+}
