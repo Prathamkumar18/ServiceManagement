@@ -44,7 +44,6 @@ public class AuthenticationController {
         return new ResponseEntity<>("WELCOME!!!",HttpStatus.OK);
     }
 
-//    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/client/sign-up")
     public ResponseEntity<?> signupClient(@RequestBody SignupRequestDTO signupRequestDTO){
         if(authService.presentByEmail(signupRequestDTO.getEmail())){
@@ -54,7 +53,6 @@ public class AuthenticationController {
         return new ResponseEntity<>(createdUser,HttpStatus.OK);
     }
 
-//    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/company/sign-up")
     public ResponseEntity<?> signupCompany(@RequestBody SignupRequestDTO signupRequestDTO){
         if(authService.presentByEmail(signupRequestDTO.getEmail())){
@@ -64,7 +62,6 @@ public class AuthenticationController {
         return new ResponseEntity<>(createdUser,HttpStatus.OK);
     }
 
-//    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/authenticate")
     public void createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest, HttpServletResponse response) throws JSONException, IOException {
         try{
