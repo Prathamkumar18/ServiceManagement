@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { UserStorageService } from '../../services/storage/user-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -22,12 +23,16 @@ export class LoginComponent {
 
   submitForm(){
     this.authService.login(this.validateForm.get(["userName"]).value,this.validateForm.get(["password"]).value).subscribe(res=>{
-      // this.notification.success('SUCCESS','login successful',{nzDuration:5000});
-      // this.router.navigateByUrl('/');
+      this.notification.success('SUCCESS','login successful',{nzDuration:5000});
       console.log(res);
+      if(UserStorageService.isClientLoggedIn()){
+        this.router.navigateByUrl("client/dashboard");
+      }
+      else if(UserStorageService.isCompanyLoggedIn()){
+        this.router.navigateByUrl("company/dashboard");
+      }
     },error=>{
       this.notification.error('ERROR',`${error.error}`,{nzDuration:5000});
     });
-    
   }
 }
