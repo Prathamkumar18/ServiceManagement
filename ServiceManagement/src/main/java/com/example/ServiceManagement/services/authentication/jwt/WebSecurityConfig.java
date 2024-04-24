@@ -25,10 +25,10 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         return http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/authenticate","/company/sign-up","/client/sign-up","/ads","/search/{service}")
+                .requestMatchers("/**","/authenticate", "/welcome","/company/sign-up","/client/sign-up","/ads","/search/{service}")
                 .permitAll()
                 .and()
-                .authorizeHttpRequests().requestMatchers("/api/**")
+                .authorizeHttpRequests().requestMatchers("/dsfdsfi/**")
                 .authenticated().and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

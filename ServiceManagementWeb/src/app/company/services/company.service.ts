@@ -14,7 +14,6 @@ export class CompanyService {
 
   postAd(adDTO:any):Observable<any>{
     const userId=UserStorageService.getUserId();
-    console.log(BASIC_URL+`api/company/ad/${userId}`);
     return this.http.post(BASIC_URL+`api/company/ad/${userId}`,adDTO,{
       headers: this.createAuthorizationHeader()
     });

@@ -19,19 +19,16 @@ public class CompanyServiceImpl implements CompanyService {
     private AdRepository adRepository;
 
     public boolean postAd(Long userId, AdDTO adDTO) throws IOException {
-        System.out.println("4");
         Optional<User> optionalUser=userRepository.findById(userId);
-        System.out.println("5");
         if(optionalUser.isPresent()){
             Ad ad=new Ad();
             ad.setServiceName(adDTO.getServiceName());
             ad.setDescription(adDTO.getDescription());
-            ad.setImg(adDTO.getImg().getBytes());
             ad.setPrice(adDTO.getPrice());
+            ad.setImg(adDTO.getImg().getBytes());
             ad.setUser(optionalUser.get());
             adRepository.save(ad);
             return true;
-
         }
         return false;
     }

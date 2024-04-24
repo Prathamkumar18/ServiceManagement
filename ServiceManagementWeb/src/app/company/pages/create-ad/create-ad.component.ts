@@ -45,7 +45,7 @@ export class CreateAdComponent {
     console.log(formData.get('img'));
     this.companyService.postAd(formData).subscribe(res=>{
       this.notification.success("SUCCESS",`Ad posted successfully!`,{nzDuration:5000})
-      this.router.navigateByUrl("/company/ads");
+      this.router.navigateByUrl("/company/ad");
     },error=>{  
     this.notification.error("ERROR",`${error.error}`,{nzDuration:5000})
     });
