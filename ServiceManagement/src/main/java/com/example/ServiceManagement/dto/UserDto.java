@@ -12,5 +12,4 @@ public class UserDto {
     private String lastname;
     private String phone;
     private UserRole role;
-
 }
