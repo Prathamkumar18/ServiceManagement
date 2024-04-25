@@ -30,4 +30,11 @@ public class CompanyController {
         return ResponseEntity.ok(companyService.getAllAds(userId));
     }
 
+    @GetMapping("ad/{adId}")
+    public ResponseEntity<?> getAdById(@PathVariable Long adId){
+        AdDTO adDTO=companyService.getAdById(adId);
+        if(adDTO!=null)return ResponseEntity.ok(adDTO);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
 }

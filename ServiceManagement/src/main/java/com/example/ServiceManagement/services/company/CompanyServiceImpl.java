@@ -8,6 +8,7 @@ import com.example.ServiceManagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -37,6 +38,13 @@ public class CompanyServiceImpl implements CompanyService {
 
     public List<AdDTO> getAllAds(Long userId){
         return adRepository.findAllByUserId(userId).stream().map(Ad::getAdDto).collect(Collectors.toList());
+    }
 
+    public AdDTO getAdById(Long adId){
+        Optional<Ad> optionalAd=adRepository.findById(adId);
+        if(optionalAd.isPresent()){
+            return optionalAd.get().getAdDto();
+        }
+        return null;
     }
 }

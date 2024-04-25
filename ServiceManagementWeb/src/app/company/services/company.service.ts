@@ -25,6 +25,12 @@ export class CompanyService {
       headers: this.createAuthorizationHeader()
     });
   }
+
+  getAdById(adId:any){
+    return this.http.get(BASIC_URL+`api/company/ad/${adId}`,{
+      headers: this.createAuthorizationHeader()
+    });
+  }
   
   createAuthorizationHeader(): HttpHeaders{
     let authHeaders:HttpHeaders=new HttpHeaders();
