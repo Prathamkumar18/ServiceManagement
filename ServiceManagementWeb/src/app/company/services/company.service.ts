@@ -31,6 +31,12 @@ export class CompanyService {
       headers: this.createAuthorizationHeader()
     });
   }
+
+  updateAd(adId:any,adDTO:any){
+    return this.http.put(BASIC_URL+`api/company/ad/${adId}`,adDTO,{
+      headers: this.createAuthorizationHeader()
+    });
+  }
   
   createAuthorizationHeader(): HttpHeaders{
     let authHeaders:HttpHeaders=new HttpHeaders();

@@ -37,4 +37,13 @@ public class CompanyController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
+    @PutMapping("/ad/{adId}")
+    public ResponseEntity<?> updateAd(@PathVariable Long adId, @ModelAttribute AdDTO adDTO) throws IOException {
+        boolean success=companyService.updateAd(adId,adDTO);
+        if(success){
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }
+        return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
 }
