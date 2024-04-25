@@ -14,7 +14,7 @@
                 <hr>
                 <div style="float:right;">
                     <button nzSize="small" nz-button nzType="primary" routerLink="/company/update/{{ad.id}}">Update</button>
-                    <button style="margin-left:10px" nzSize="small" nz-button nzType="primary" nzDanger>Delete</button>
+                    <button style="margin-left:10px" nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteAd(ad.id)">Delete</button>
                 </div>
             </div>
         </div>

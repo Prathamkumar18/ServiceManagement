@@ -37,6 +37,12 @@ export class CompanyService {
       headers: this.createAuthorizationHeader()
     });
   }
+
+  deleteAd(adId:any){
+    return this.http.delete(BASIC_URL+`api/company/ad/${adId}`,{
+      headers: this.createAuthorizationHeader()
+    });
+  }
   
   createAuthorizationHeader(): HttpHeaders{
     let authHeaders:HttpHeaders=new HttpHeaders();
