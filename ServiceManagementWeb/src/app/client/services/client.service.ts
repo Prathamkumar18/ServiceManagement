@@ -36,6 +36,13 @@ export class ClientService {
     });
   }
 
+  getAllBookingsByUserId():Observable<any>{
+    const userId=UserStorageService.getUserId();
+    return this.http.get(BASIC_URL+`api/client/my-bookings/${userId}`,{
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
   createAuthorizationHeader(): HttpHeaders{
     let authHeaders:HttpHeaders=new HttpHeaders();
     return authHeaders.set(
