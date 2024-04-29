@@ -1,0 +1,55 @@
+.bg {
+    background-color: #f0f0f0;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+
+    .child {
+        margin-top: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        background-color: #fff;
+
+        .row {
+            display: flex;
+            align-items: center;
+        }
+
+        .image-column {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        .profile {
+            height: 100px;
+            width: 140px;
+            border-radius: 10px;
+        }
+
+        .content-column {
+            flex: 1;
+        }
+
+        .button-container {
+            margin-top: 10px;
+            text-align: right;
+
+            button {
+                // Styles for the view button
+                background-color: #108ee9; // Blueish color
+                border-color: #108ee9; // Blueish color
+                color: #fff; // White text color
+            }
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #108ee9; // Blueish color for service name
+        }
+
+        h5 {
+            font-size: 14px;
+        }
+    }
+}

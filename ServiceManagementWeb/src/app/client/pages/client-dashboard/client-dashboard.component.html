@@ -1,1 +1,19 @@
-<p>client-dashboard works!</p>
+<div class="bg">
+    <div style="margin-top:10px;" class="child" *ngFor="let ad of ads">
+        <div class="row">
+            <div class="image-column">
+                <img class="profile" [src]="updateImage(ad.returnedImg)" />
+            </div>
+            <div class="content-column">
+                <h2>{{ad.serviceName}}</h2>
+                <hr>
+                <h5>Price: <b>{{ad.price}}</b></h5>
+                <h5>Description: <b>{{ad.description}}</b></h5>
+                <hr>
+                <div class="button-container">
+                    <button nzSize="small" nz-button nzType="primary" routerLink="/client/ad/{{ad.id}}">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
