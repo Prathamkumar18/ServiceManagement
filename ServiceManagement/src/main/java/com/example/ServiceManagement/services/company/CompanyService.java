@@ -1,14 +1,16 @@
 package com.example.ServiceManagement.services.company;
 
 import com.example.ServiceManagement.dto.AdDTO;
+import com.example.ServiceManagement.dto.ReservationDTO;
 
 import java.io.IOException;
 import java.util.List;
 
 public interface CompanyService {
-    public boolean postAd(Long userId, AdDTO adDTO) throws IOException;
-    public List<AdDTO> getAllAds(Long userId);
-    public AdDTO getAdById(Long adId);
-    public boolean updateAd(Long adId,AdDTO adDTO) throws IOException;
-    public boolean deleteAd(Long adId);
+     boolean postAd(Long userId, AdDTO adDTO) throws IOException;
+     List<AdDTO> getAllAds(Long userId);
+     AdDTO getAdById(Long adId);
+     boolean updateAd(Long adId,AdDTO adDTO) throws IOException;
+     boolean deleteAd(Long adId);
+     List<ReservationDTO> getAllAdBookings(Long companyId);
 }

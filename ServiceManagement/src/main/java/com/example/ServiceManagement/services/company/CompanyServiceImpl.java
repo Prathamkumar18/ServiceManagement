@@ -1,9 +1,12 @@
 package com.example.ServiceManagement.services.company;
 
 import com.example.ServiceManagement.dto.AdDTO;
+import com.example.ServiceManagement.dto.ReservationDTO;
 import com.example.ServiceManagement.entity.Ad;
+import com.example.ServiceManagement.entity.Reservation;
 import com.example.ServiceManagement.entity.User;
 import com.example.ServiceManagement.repository.AdRepository;
+import com.example.ServiceManagement.repository.ReservationRepository;
 import com.example.ServiceManagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +23,8 @@ public class CompanyServiceImpl implements CompanyService {
     private UserRepository userRepository;
     @Autowired
     private AdRepository adRepository;
+    @Autowired
+    private ReservationRepository reservationRepository;
 
     public boolean postAd(Long userId, AdDTO adDTO) throws IOException {
         Optional<User> optionalUser=userRepository.findById(userId);
@@ -69,5 +74,9 @@ public class CompanyServiceImpl implements CompanyService {
             return true;
         }
         return false;
+    }
+
+    public List<ReservationDTO> getAllAdBookings(Long companyId){
+        return reservationRepository.findAllByCompanyId(companyId).stream().map(Reservation::getReservationDto).collect(Collectors.toList());
     }
 }
