@@ -13,8 +13,13 @@ export class ClientService {
   constructor(private http:HttpClient) { }
 
   getAllAds():Observable<any>{
-    const userId=UserStorageService.getUserId();
     return this.http.get(BASIC_URL+`api/client/ads`,{
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
+  searchAdByName(name:any):Observable<any>{
+    return this.http.get(BASIC_URL+`api/client/search/${name}`,{
       headers: this.createAuthorizationHeader()
     });
   }

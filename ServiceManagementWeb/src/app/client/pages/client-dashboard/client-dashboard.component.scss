@@ -52,4 +52,14 @@
             font-size: 14px;
         }
     }
+
+    &.empty {
+        .child {
+            text-align: center;
+            color: #555; // Dark gray color
+            font-size: 18px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+    }
 }
