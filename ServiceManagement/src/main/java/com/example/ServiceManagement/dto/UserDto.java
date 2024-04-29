@@ -1,6 +1,6 @@
 package com.example.ServiceManagement.dto;
 
-import com.example.ServiceManagement.entity.UserRole;
+import com.example.ServiceManagement.enums.UserRole;
 import lombok.Data;
 
 @Data

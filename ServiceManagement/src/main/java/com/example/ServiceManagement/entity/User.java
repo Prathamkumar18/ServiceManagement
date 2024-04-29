@@ -1,6 +1,7 @@
 package com.example.ServiceManagement.entity;
 
 import com.example.ServiceManagement.dto.UserDto;
+import com.example.ServiceManagement.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.Data;
 

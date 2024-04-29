@@ -3,7 +3,7 @@ package com.example.ServiceManagement.services.authentication;
 import com.example.ServiceManagement.dto.SignupRequestDTO;
 import com.example.ServiceManagement.dto.UserDto;
 import com.example.ServiceManagement.entity.User;
-import com.example.ServiceManagement.entity.UserRole;
+import com.example.ServiceManagement.enums.UserRole;
 import com.example.ServiceManagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

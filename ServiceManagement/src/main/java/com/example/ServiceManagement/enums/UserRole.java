@@ -1,4 +1,4 @@
-package com.example.ServiceManagement.entity;
+package com.example.ServiceManagement.enums;
 
 public enum UserRole {
     CLIENT,
