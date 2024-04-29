@@ -26,27 +26,33 @@ export class CompanyService {
     });
   }
 
-  getAdById(adId:any){
+  getAdById(adId:any):Observable<any>{
     return this.http.get(BASIC_URL+`api/company/ad/${adId}`,{
       headers: this.createAuthorizationHeader()
     });
   }
 
-  updateAd(adId:any,adDTO:any){
+  updateAd(adId:any,adDTO:any):Observable<any>{
     return this.http.put(BASIC_URL+`api/company/ad/${adId}`,adDTO,{
       headers: this.createAuthorizationHeader()
     });
   }
 
-  deleteAd(adId:any){
+  deleteAd(adId:any):Observable<any>{
     return this.http.delete(BASIC_URL+`api/company/ad/${adId}`,{
       headers: this.createAuthorizationHeader()
     });
   }
   
-  getAllAdBookings(){
+  getAllAdBookings():Observable<any>{
     const companyId=UserStorageService.getUserId();
     return this.http.get(BASIC_URL+`api/company/bookings/${companyId}`,{
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
+  changeBookingStatus(bookingId:number,status:string):Observable<any>{
+    return this.http.get(BASIC_URL+`api/company/booking/${bookingId}/${status}`,{
       headers: this.createAuthorizationHeader()
     });
   }
