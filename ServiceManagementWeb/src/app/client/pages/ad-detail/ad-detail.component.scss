@@ -1,37 +1,49 @@
 .bg {
     background-color: #f8f8f8;
     padding: 20px;
-    max-width: 700px; // Decrease the maximum width of the box
-    margin: 0 auto; // Center the box horizontally
+    max-width: 800px; // Adjust as needed
+    margin: 0 auto; // Center the container horizontally
 
     .ad-details-container {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        display: flex; // Use flexbox for layout
-        flex-direction: column; // Stack elements vertically
-
         .top-section {
-            display: flex; // Use flexbox for layout
-            justify-content: space-between; // Put items at the start and end of the container
-            align-items: flex-start; // Align items to the top
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
 
             .ad-detail {
-                width: 50%; // Take up half of the container's width
-                padding-right: 20px; // Add some space between sections
+                display: flex;
+                align-items: flex-start;
+
+                .profile {
+                    height: 130px;
+                    width: 200px;
+                    border-radius: 10px;
+                }
+
+                nz-col {
+                    flex: 1; // Take remaining space
+                    margin-left: 20px; // Add some space between the image and details
+                }
+
+                h2 {
+                    cursor: pointer;
+                    color: #108ee9;
+                    margin-bottom: 10px; // Add some space below the heading
+                }
             }
 
             .book-service {
-                width: 50%; // Take up half of the container's width
-                padding-left: 20px; // Add some space between sections
+                flex: 1; // Take remaining space
+                margin-left: 20px; // Add some space between the details and book service section
             }
         }
 
         .reviews-section {
-            margin-top: 20px;
-            border-top: 1px solid #ccc;
-            padding-top: 20px;
+            margin-top: 20px; // Add some space above the reviews section
+
+            .review-card {
+                margin-top: 20px; // Add some space between each review card
+            }
         }
     }
 }
