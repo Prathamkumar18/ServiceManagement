@@ -32,18 +32,21 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    height: 150px; /* Set a fixed height to align vertically */
 }
 
 .circle-image {
-    width: 150px; /* Adjust as needed */
-    height: 150px; /* Adjust as needed */
+    margin-left: 80px;
+    width: 180px; /* Adjust as needed */
+    height: 180px; /* Adjust as needed */
     border-radius: 50%; /* Make the shape circular */
     overflow: hidden;
-    border: 2px solid #ccc; /* Add border to the image */
+    border: 1px solid #ccc; /* Add border to the image */
     display: flex; /* Ensure flex container for centering */
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
 }
+
 
 .preview-image {
     max-width: 100%; /* Ensure image fits within container */
@@ -57,5 +60,6 @@
 
 .login-form-button {
     width: 100%;
+    background-color: black;
     margin-top: 20px;
 }

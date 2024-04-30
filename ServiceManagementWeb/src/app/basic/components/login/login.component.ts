@@ -36,7 +36,6 @@ export class LoginComponent {
           this.notification.success('SUCCESS', 'login successful', {
             nzDuration: 5000,
           });
-          console.log(res);
           if (UserStorageService.isClientLoggedIn()) {
             this.router.navigateByUrl('client/dashboard');
           } else if (UserStorageService.isCompanyLoggedIn()) {

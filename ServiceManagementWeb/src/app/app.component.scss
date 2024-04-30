@@ -1,0 +1,32 @@
+.title {
+    color: #1d77cb;
+}
+
+.header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+}
+
+.link {
+    color: #FFFFFF;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #adb8ff;
+}

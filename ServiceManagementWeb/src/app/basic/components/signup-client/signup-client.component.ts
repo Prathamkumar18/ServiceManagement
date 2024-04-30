@@ -35,7 +35,6 @@ export class SignupClientComponent {
   }
 
   submitForm() {
-    console.log(this.validateForm.value);
     this.authService.registerClient(this.validateForm.value).subscribe(
       (res) => {
         this.notification.success('SUCCESS', 'Signup successful', {

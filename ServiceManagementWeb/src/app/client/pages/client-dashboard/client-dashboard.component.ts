@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrl: './client-dashboard.component.scss',
 })
 export class ClientDashboardComponent {
-  ads: any[];
+  ads: any[]=[];
   validateForm: FormGroup;
 
   constructor(private clientService: ClientService) {}
@@ -19,8 +19,6 @@ export class ClientDashboardComponent {
     });
     this.getAllAds();
   }
-
-  f(event: any) {}
 
   getAllAds() {
     this.clientService.getAllAds().subscribe((res) => {
