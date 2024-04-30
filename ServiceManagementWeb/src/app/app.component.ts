@@ -5,25 +5,25 @@ import { UserStorageService } from './basic/services/storage/user-storage.servic
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'ServiceManagementWeb';
 
-  isClientLoggedIn:boolean=UserStorageService.isClientLoggedIn();
-  isCompanyLoggedIn:boolean=UserStorageService.isCompanyLoggedIn();
+  isClientLoggedIn: boolean = UserStorageService.isClientLoggedIn();
+  isCompanyLoggedIn: boolean = UserStorageService.isCompanyLoggedIn();
 
-  constructor(private router:Router){}
+  constructor(private router: Router) {}
 
-  ngOnInit(){
-    this.router.events.subscribe(event=>{
-      this.isClientLoggedIn=UserStorageService.isClientLoggedIn();
-    this.isCompanyLoggedIn=UserStorageService.isCompanyLoggedIn();
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      this.isClientLoggedIn = UserStorageService.isClientLoggedIn();
+      this.isCompanyLoggedIn = UserStorageService.isCompanyLoggedIn();
     });
   }
 
-  logout(){
+  logout() {
     UserStorageService.signOut();
-    this.router.navigateByUrl("login");
+    this.router.navigateByUrl('login');
   }
 }

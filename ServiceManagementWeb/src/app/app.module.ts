@@ -24,20 +24,20 @@ registerLocaleData(en);
     LoginComponent,
     SignupComponent,
     SignupClientComponent,
-    SignupCompanyComponent
+    SignupCompanyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     DemoNgZorroAntdModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     provideAnimationsAsync(),
-    provideHttpClient()
+    provideHttpClient(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

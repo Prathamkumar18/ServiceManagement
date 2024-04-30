@@ -10,21 +10,20 @@ import { AdDetailComponent } from './pages/ad-detail/ad-detail.component';
 import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
 import { ReviewComponent } from './pages/review/review.component';
 
-
 @NgModule({
   declarations: [
     ClientComponent,
     ClientDashboardComponent,
     AdDetailComponent,
     MyBookingsComponent,
-    ReviewComponent
+    ReviewComponent,
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    DemoNgZorroAntdModule
-  ]
+    DemoNgZorroAntdModule,
+  ],
 })
-export class ClientModule { }
+export class ClientModule {}

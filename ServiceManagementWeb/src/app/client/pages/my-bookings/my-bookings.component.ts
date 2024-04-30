@@ -5,20 +5,20 @@ import { UserStorageService } from '../../../basic/services/storage/user-storage
 @Component({
   selector: 'app-my-bookings',
   templateUrl: './my-bookings.component.html',
-  styleUrl: './my-bookings.component.scss'
+  styleUrl: './my-bookings.component.scss',
 })
 export class MyBookingsComponent {
-  bookedServices:any[];
+  bookedServices: any[];
 
-  constructor(private clientService:ClientService){}
+  constructor(private clientService: ClientService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.getMyBookings();
   }
 
-  getMyBookings(){
-    this.clientService.getAllBookingsByUserId().subscribe(res=>{
-      this.bookedServices=res;
+  getMyBookings() {
+    this.clientService.getAllBookingsByUserId().subscribe((res) => {
+      this.bookedServices = res;
     });
   }
 }

@@ -1,9 +1,9 @@
-
 import { NgModule } from '@angular/core';
 
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
+
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
@@ -133,9 +133,7 @@ import { NzResizableModule } from 'ng-zorro-antd/resizable';
     NzTypographyModule,
     NzUploadModule,
     NzWaveModule,
-    NzResizableModule
-  ]
+    NzResizableModule,
+  ],
 })
-export class DemoNgZorroAntdModule {
-
-}
+export class DemoNgZorroAntdModule {}

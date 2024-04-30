@@ -10,20 +10,19 @@ import { DemoNgZorroAntdModule } from '../DemoNgZorroAntdModule';
 import { AllAdsComponent } from './pages/all-ads/all-ads.component';
 import { UpdateAdComponent } from './pages/update-ad/update-ad.component';
 
-
 @NgModule({
   declarations: [
     CompanyComponent,
     CompanyDashboardComponent,
     CreateAdComponent,
     AllAdsComponent,
-    UpdateAdComponent
+    UpdateAdComponent,
   ],
   imports: [
     CommonModule,
     CompanyRoutingModule,
     ReactiveFormsModule,
-    DemoNgZorroAntdModule
-  ]
+    DemoNgZorroAntdModule,
+  ],
 })
-export class CompanyModule { }
+export class CompanyModule {}
