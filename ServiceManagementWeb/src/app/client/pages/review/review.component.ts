@@ -31,6 +31,7 @@ export class ReviewComponent {
       userId: UserStorageService.getUserId(),
       bookId: this.bookId
     };
+    console.log(reviewDTO.rating)
     this.clientService.giveReview(reviewDTO).subscribe(res=>{
       this.notification.success('SUCCESS','Review posted successfully!',{nzDuration:5000});
       this.router.navigateByUrl('/client/bookings');

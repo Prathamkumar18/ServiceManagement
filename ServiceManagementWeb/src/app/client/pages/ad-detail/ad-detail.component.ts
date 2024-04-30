@@ -31,7 +31,6 @@ export class AdDetailComponent {
     this.clientService.getAdDetailsByAdId(this.adId).subscribe(res=>{
       this.avatarUrl='data:image/jpeg;base64,'+res.adDTO.returnedImg;
       this.ad=res.adDTO;
-      console.log(res)
       this.reviews=res.reviewDTO;
     });
   }

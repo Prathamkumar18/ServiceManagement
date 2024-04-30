@@ -81,7 +81,7 @@ public class ClientServiceImpl implements ClientService{
             Review review=new Review();
             review.setReview(reviewDTO.getReview());
             review.setReviewDate(new Date());
-            review.setRating(review.getRating());
+            review.setRating(reviewDTO.getRating());
             review.setUser(optionalUser.get());
             review.setAd(optionalReservation.get().getAd());
             reviewRepository.save(review);
