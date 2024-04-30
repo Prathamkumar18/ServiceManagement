@@ -20,52 +20,52 @@ public class CompanyController {
 
     @PostMapping("/ad/{userId}")
     public ResponseEntity<?> postAd(@PathVariable Long userId, @ModelAttribute AdDTO adDTO) throws IOException {
-        boolean success=companyService.postAd(userId,adDTO);
-        if(success){
+        boolean success = companyService.postAd(userId, adDTO);
+        if (success) {
             return ResponseEntity.status(HttpStatus.OK).build();
         }
-        return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @GetMapping("ads/{userId}")
-    public ResponseEntity<?> getAllAdsByUserId(@PathVariable Long userId){
+    public ResponseEntity<?> getAllAdsByUserId(@PathVariable Long userId) {
         return ResponseEntity.ok(companyService.getAllAds(userId));
     }
 
     @GetMapping("ad/{adId}")
-    public ResponseEntity<?> getAdById(@PathVariable Long adId){
-        AdDTO adDTO=companyService.getAdById(adId);
-        if(adDTO!=null)return ResponseEntity.ok(adDTO);
+    public ResponseEntity<?> getAdById(@PathVariable Long adId) {
+        AdDTO adDTO = companyService.getAdById(adId);
+        if (adDTO != null) return ResponseEntity.ok(adDTO);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @PutMapping("/ad/{adId}")
     public ResponseEntity<?> updateAd(@PathVariable Long adId, @ModelAttribute AdDTO adDTO) throws IOException {
-        boolean success=companyService.updateAd(adId,adDTO);
-        if(success){
+        boolean success = companyService.updateAd(adId, adDTO);
+        if (success) {
             return ResponseEntity.status(HttpStatus.OK).build();
         }
-        return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @DeleteMapping("/ad/{adId}")
-    public ResponseEntity<?> deleteAd(@PathVariable Long adId){
-        boolean success=companyService.deleteAd(adId);
-        if(success){
+    public ResponseEntity<?> deleteAd(@PathVariable Long adId) {
+        boolean success = companyService.deleteAd(adId);
+        if (success) {
             return ResponseEntity.status(HttpStatus.OK).build();
         }
-        return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @GetMapping("bookings/{companyId}")
-    public ResponseEntity<List<ReservationDTO>> getAllAdBookings(@PathVariable Long companyId){
+    public ResponseEntity<List<ReservationDTO>> getAllAdBookings(@PathVariable Long companyId) {
         return ResponseEntity.ok(companyService.getAllAdBookings(companyId));
     }
 
     @GetMapping("booking/{bookingId}/{status}")
-    public ResponseEntity<?> changeBookingStatus(@PathVariable Long bookingId,@PathVariable String status){
-        boolean success=companyService.changeBookingStatus(bookingId,status);
-        if(success)return ResponseEntity.ok().build();
+    public ResponseEntity<?> changeBookingStatus(@PathVariable Long bookingId, @PathVariable String status) {
+        boolean success = companyService.changeBookingStatus(bookingId, status);
+        if (success) return ResponseEntity.ok().build();
         return ResponseEntity.notFound().build();
     }
 }

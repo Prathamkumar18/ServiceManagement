@@ -22,10 +22,10 @@ public class WebSecurityConfig {
     private JwtRequestFilter requestFilter;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/**","/authenticate", "/welcome","/company/sign-up","/client/sign-up","/ads","/search/{service}")
+                .requestMatchers("/**", "/authenticate", "/welcome", "/company/sign-up", "/client/sign-up", "/ads", "/search/{service}")
                 .permitAll()
                 .and()
                 .authorizeHttpRequests().requestMatchers("/dsfdsfi/**")
@@ -36,13 +36,14 @@ public class WebSecurityConfig {
                 .addFilterBefore(requestFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
+
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception{
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 

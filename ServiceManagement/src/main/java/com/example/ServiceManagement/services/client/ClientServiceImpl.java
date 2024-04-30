@@ -23,7 +23,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class ClientServiceImpl implements ClientService{
+public class ClientServiceImpl implements ClientService {
 
     @Autowired
     private AdRepository adRepository;
@@ -34,19 +34,19 @@ public class ClientServiceImpl implements ClientService{
     @Autowired
     private ReviewRepository reviewRepository;
 
-    public List<AdDTO> getAllAds(){
+    public List<AdDTO> getAllAds() {
         return this.adRepository.findAll().stream().map(Ad::getAdDto).collect(Collectors.toList());
     }
 
-    public List<AdDTO> searchAdByName(String name){
+    public List<AdDTO> searchAdByName(String name) {
         return adRepository.findAllByServiceNameContaining(name).stream().map(Ad::getAdDto).collect(Collectors.toList());
     }
 
-    public boolean bookService(ReservationDTO reservationDTO){
-        Optional<Ad> optionalAd=adRepository.findById(reservationDTO.getAdId());
-        Optional<User> optionalUser=userRepository.findById(reservationDTO.getUserId());
-        if(optionalUser.isPresent() && optionalAd.isPresent()){
-            Reservation reservation=new Reservation();
+    public boolean bookService(ReservationDTO reservationDTO) {
+        Optional<Ad> optionalAd = adRepository.findById(reservationDTO.getAdId());
+        Optional<User> optionalUser = userRepository.findById(reservationDTO.getUserId());
+        if (optionalUser.isPresent() && optionalAd.isPresent()) {
+            Reservation reservation = new Reservation();
             reservation.setBookDate(reservationDTO.getBookDate());
             reservation.setReservationStatus(ReservationStatus.PENDING);
             reservation.setUser(optionalUser.get());
@@ -59,33 +59,33 @@ public class ClientServiceImpl implements ClientService{
         return false;
     }
 
-    public AdDetailsForClientDTO getAdDetailsByAdId(Long adId){
-        Optional<Ad> optionalAd=adRepository.findById(adId);
-        AdDetailsForClientDTO adDetailsForClientDTO=new AdDetailsForClientDTO();
-        if(optionalAd.isPresent()){
+    public AdDetailsForClientDTO getAdDetailsByAdId(Long adId) {
+        Optional<Ad> optionalAd = adRepository.findById(adId);
+        AdDetailsForClientDTO adDetailsForClientDTO = new AdDetailsForClientDTO();
+        if (optionalAd.isPresent()) {
             adDetailsForClientDTO.setAdDTO(optionalAd.get().getAdDto());
-            List<ReviewDTO> reviewDTOs=reviewRepository.findAllByAdId(adId).stream().map(Review::getReviewDTO).collect(Collectors.toList());
+            List<ReviewDTO> reviewDTOs = reviewRepository.findAllByAdId(adId).stream().map(Review::getReviewDTO).collect(Collectors.toList());
             adDetailsForClientDTO.setReviewDTO(reviewDTOs);
         }
         return adDetailsForClientDTO;
     }
 
-    public List<ReservationDTO> getAllBookingsByUserId(Long userId){
+    public List<ReservationDTO> getAllBookingsByUserId(Long userId) {
         return this.reservationRepository.findAllByUserId(userId).stream().map(Reservation::getReservationDto).collect(Collectors.toList());
     }
 
-    public boolean giveReview(ReviewDTO reviewDTO){
-        Optional<User> optionalUser=userRepository.findById(reviewDTO.getUserId());
-        Optional<Reservation> optionalReservation=reservationRepository.findById(reviewDTO.getBookId());
-        if(optionalReservation.isPresent() && optionalUser.isPresent()){
-            Review review=new Review();
+    public boolean giveReview(ReviewDTO reviewDTO) {
+        Optional<User> optionalUser = userRepository.findById(reviewDTO.getUserId());
+        Optional<Reservation> optionalReservation = reservationRepository.findById(reviewDTO.getBookId());
+        if (optionalReservation.isPresent() && optionalUser.isPresent()) {
+            Review review = new Review();
             review.setReview(reviewDTO.getReview());
             review.setReviewDate(new Date());
             review.setRating(reviewDTO.getRating());
             review.setUser(optionalUser.get());
             review.setAd(optionalReservation.get().getAd());
             reviewRepository.save(review);
-            Reservation booking=optionalReservation.get();
+            Reservation booking = optionalReservation.get();
             booking.setReviewStatus(ReviewStatus.TRUE);
             reservationRepository.save(booking);
             return true;

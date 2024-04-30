@@ -19,8 +19,8 @@ public class User {
     private String phone;
     private UserRole role;
 
-    public UserDto getDto(){
-        UserDto userDto=new UserDto();
+    public UserDto getDto() {
+        UserDto userDto = new UserDto();
         userDto.setId(id);
         userDto.setName(name);
         userDto.setLastname(lastname);

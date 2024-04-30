@@ -21,23 +21,23 @@ public class Reservation {
     private ReviewStatus reviewStatus;
     private Date bookDate;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "user_id",nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "company_id",nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "company_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User company;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "ad_id",nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ad_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Ad ad;
 
-    public ReservationDTO getReservationDto(){
-        ReservationDTO dto=new ReservationDTO();
+    public ReservationDTO getReservationDto() {
+        ReservationDTO dto = new ReservationDTO();
         dto.setId(id);
         dto.setBookDate(bookDate);
         dto.setServiceName(ad.getServiceName());

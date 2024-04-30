@@ -20,13 +20,13 @@ public class Ad {
     @Lob
     @Column(columnDefinition = "longblob")
     private byte[] img;
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    public AdDTO getAdDto(){
-        AdDTO adDTO=new AdDTO();
+    public AdDTO getAdDto() {
+        AdDTO adDTO = new AdDTO();
         adDTO.setId(id);
         adDTO.setServiceName(serviceName);
         adDTO.setDescription(description);

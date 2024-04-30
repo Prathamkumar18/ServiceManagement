@@ -19,18 +19,18 @@ public class Review {
     private String review;
     private Long rating;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "user_id",nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "ad_id",nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ad_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Ad ad;
 
-    public ReviewDTO getReviewDTO(){
-        ReviewDTO reviewDTO=new ReviewDTO();
+    public ReviewDTO getReviewDTO() {
+        ReviewDTO reviewDTO = new ReviewDTO();
         reviewDTO.setId(id);
         reviewDTO.setReviewDate(reviewDate);
         reviewDTO.setReview(review);
