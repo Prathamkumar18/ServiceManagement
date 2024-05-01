@@ -8,8 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api/client")
 public class ClientController {
@@ -19,6 +17,11 @@ public class ClientController {
     @GetMapping("/ads")
     public ResponseEntity<?> getAllAds() {
         return ResponseEntity.ok(clientService.getAllAds());
+    }
+
+    @GetMapping("/ads/{category}/{sortBy}")
+    public ResponseEntity<?> getAllAdsSorted(@PathVariable String category,@PathVariable String sortBy) {
+        return ResponseEntity.ok(clientService.getAllAdsSorted(category,sortBy));
     }
 
     @GetMapping("/search/{name}")

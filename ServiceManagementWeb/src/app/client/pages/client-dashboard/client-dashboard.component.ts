@@ -10,6 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ClientDashboardComponent {
   ads: any[]=[];
   validateForm: FormGroup;
+  buttonNo:number=0;
 
   constructor(private clientService: ClientService) {}
 
@@ -21,9 +22,35 @@ export class ClientDashboardComponent {
   }
 
   getAllAds() {
-    this.clientService.getAllAds().subscribe((res) => {
-      this.ads = res;
-    });
+    if(this.buttonNo===0){
+      this.clientService.getAllAds().subscribe((res) => {
+        this.ads = res;
+      });
+    }
+    else if(this.buttonNo===1){
+      this.clientService.getAllAdsSorted("price","low").subscribe((res) => {
+        this.ads = res;
+      });
+    }
+    else if(this.buttonNo===2){
+      this.clientService.getAllAdsSorted("price","high").subscribe((res) => {
+        this.ads = res;
+      });
+    }
+    else if(this.buttonNo===3){
+      this.clientService.getAllAdsSorted("average_rating","low").subscribe((res) => {
+        this.ads = res;
+      });
+    }
+    else if(this.buttonNo===4){
+      this.clientService.getAllAdsSorted("average_rating","high").subscribe((res) => {
+        this.ads = res;
+      });
+    }
+  }
+
+  getSortedAdsByCategory(){
+
   }
 
   searchAdByName() {

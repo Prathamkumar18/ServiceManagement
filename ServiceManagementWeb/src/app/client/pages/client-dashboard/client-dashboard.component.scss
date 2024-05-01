@@ -1,15 +1,18 @@
 .bg {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light gray background color */
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure child elements don't overflow */
 
     .child {
         margin-top: 10px;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         padding: 10px;
-        background-color: #fff;
+        background-color: #fff; /* White background color */
+        overflow: hidden; /* Ensure child elements don't overflow */
 
         .row {
             display: flex;
@@ -36,16 +39,15 @@
             text-align: right;
 
             button {
-                // Styles for the view button
-                background-color: #108ee9; // Blueish color
-                border-color: #108ee9; // Blueish color
-                color: #fff; // White text color
+                background-color: #108ee9; /* Blue button background color */
+                border-color: #108ee9; /* Blue button border color */
+                color: #fff; /* White text color */
             }
         }
 
         h2 {
             font-size: 18px;
-            color: #108ee9; // Blueish color for service name
+            color: #108ee9; /* Blueish color for service name */
         }
 
         h5 {
@@ -56,7 +58,7 @@
     &.empty {
         .child {
             text-align: center;
-            color: #555; // Dark gray color
+            color: #555; /* Dark gray text color */
             font-size: 18px;
             padding: 20px;
             margin: 10px 0;

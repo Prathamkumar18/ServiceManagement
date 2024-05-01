@@ -17,6 +17,12 @@ export class ClientService {
     });
   }
 
+  getAllAdsSorted(category:string,sortBy:string): Observable<any>{
+    return this.http.get(BASIC_URL + `api/client/ads/${category}/${sortBy}`, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
   searchAdByName(name: any): Observable<any> {
     return this.http.get(BASIC_URL + `api/client/search/${name}`, {
       headers: this.createAuthorizationHeader(),

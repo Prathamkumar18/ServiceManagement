@@ -39,6 +39,13 @@ public class ClientServiceImpl implements ClientService {
         return this.adRepository.findAll().stream().map(Ad::getAdDto).collect(Collectors.toList());
     }
 
+    public List<AdDTO> getAllAdsSorted(String category,String sortBy) {
+        if(category.equals("price") && sortBy.equals("low")) return this.adRepository.findAllAdsSortByPriceAsc().stream().map(Ad::getAdDto).collect(Collectors.toList());
+        else if(category.equals("price") && sortBy.equals("high"))return this.adRepository.findAllAdsSortByPriceDesc().stream().map(Ad::getAdDto).collect(Collectors.toList());
+        else if(category.equals("average_rating") && sortBy.equals("low"))return this.adRepository.findAllAdsSortByAverageRatingAsc().stream().map(Ad::getAdDto).collect(Collectors.toList());
+        else return this.adRepository.findAllAdsSortByAverageRatingDesc().stream().map(Ad::getAdDto).collect(Collectors.toList());
+    }
+
     public List<AdDTO> searchAdByName(String name) {
         return adRepository.findAllByServiceNameContaining(name).stream().map(Ad::getAdDto).collect(Collectors.toList());
     }
