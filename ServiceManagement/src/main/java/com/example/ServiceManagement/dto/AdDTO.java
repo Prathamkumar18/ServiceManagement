@@ -13,6 +13,7 @@ public class AdDTO {
     private Double price;
     private MultipartFile img;
     private byte[] returnedImg;
+    private Double averageRating;
     private Long userId;
     private String companyName;
 }
