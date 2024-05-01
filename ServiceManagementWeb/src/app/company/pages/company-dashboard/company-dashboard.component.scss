@@ -1,21 +1,51 @@
-/* Styles for the table header */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .heading {
     font-weight: bold;
     background-color: #f0f0f0;
-    padding: 10px;
+    padding: 16px;
+    text-align: left;
+    border-bottom: 2px solid #e0e0e0;
 }
 
-/* Styles for table rows */
 tr {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-/* Styles for table data cells */
 td {
-    padding: 10px;
+    padding: 16px;
 }
 
-/* Styles for buttons */
 button {
-    margin-left: 10px;
+    margin-left: 8px;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+button[nz-button][nzType="primary"] {
+    background-color: #1890ff;
+    color: #fff;
+    border: 1px solid #1890ff;
+}
+
+button[nz-button][nzType="primary"]:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+}
+
+button[nz-button][nzDanger] {
+    background-color: #ff4d4f;
+    color: #fff;
+    border: 1px solid #ff4d4f;
+}
+
+button[nz-button][nzDanger]:hover {
+    background-color: #ff7875;
+    border-color: #ff7875;
 }

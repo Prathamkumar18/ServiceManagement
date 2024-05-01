@@ -1,14 +1,13 @@
-<div style="background-color: #f8f8f8;">
+<div class="bg">
     <div class="parent">
         <div class="child">
             <div nz-row class="imgDiv">
-                <h2 style="margin-left:140px">Update Ad</h2>
+                <h2 class="title">Update Ad</h2>
             </div>
             <form nz-form [formGroup]="validateForm" (ngSubmit)="updateAd()">
                 <div nz-row>
                     <div class="file-upload-container">
-                        <label class="file-upload-container">
-                            <span style="margin-left: 100px;">Select a File</span>
+                        <label class="file-upload-label">
                             <input type="file" nz-button nzType="primary" accept="image/x-png,image/gif,image/jpeg" (change)="onFileSelected($event)"/>
                         </label>
                         <div *ngIf="imagePreview" class="image-preview">
@@ -19,7 +18,8 @@
                         <div>
                             <div *ngIf="existingImg" class="image-preview">
                                 <div class="circle-image">
-                                    <img [src]="existingImg" alt="Existing Image" class="preview-image"/>                                </div>
+                                    <img [src]="existingImg" alt="Existing Image" class="preview-image"/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -27,26 +27,26 @@
                     <div nz-col nzSpan="24">
                         <nz-form-item>
                             <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is required!">
-                                <input nz-input placeholder="Service Name" formControlName="serviceName"/>
+                                <input nz-input placeholder="Service Name" formControlName="serviceName" class="input-field"/>
                             </nz-form-control>
                         </nz-form-item>
                     </div>
                     <div nz-col nzSpan="24">
                         <nz-form-item>
                             <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is required!">
-                                <input nz-input placeholder="Price" formControlName="price" type="number"/>
+                                <input nz-input placeholder="Price" formControlName="price" type="number" class="input-field"/>
                             </nz-form-control>
                         </nz-form-item>
                     </div>
                     <div nz-col nzSpan="24">
                         <nz-form-item>
                             <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is required!">
-                                <textarea nz-input placeholder="Description" formControlName="description"></textarea>
+                                <textarea nz-input placeholder="Description" formControlName="description" class="input-field"></textarea>
                             </nz-form-control>
                         </nz-form-item>
                     </div>
                 </div>
-                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
+                <button nz-button class="login-form-button" [nzType]="'primary'">
                     Update Ad
                 </button>
             </form>

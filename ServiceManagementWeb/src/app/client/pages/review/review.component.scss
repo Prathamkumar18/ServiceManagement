@@ -1,40 +1,37 @@
 .parent {
     display: flex;
-    justify-content: center; /* Center the child horizontally */
-    align-items: center; /* Center the child vertically */
-    height: 100vh; /* Make the parent take up the full height of the viewport */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .child {
-    width: 80%; /* Set the width of the child */
-    max-width: 600px; /* Optionally set a maximum width */
+    width: 80%;
+    max-width: 600px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
 }
 
 .imgDiv {
-    text-align: center; /* Center the text horizontally */
+    text-align: center;
     margin-bottom: 20px;
 }
 
-/* Styles for the form */
 form {
     display: flex;
     flex-direction: column;
 }
 
-/* Styles for the textarea */
 textarea {
-    resize: vertical; /* Allow vertical resizing */
-    width: 100%; /* Take up the full width of the container */
+    resize: vertical;
+    width: 100%;
 }
 
-/* Styles for the button */
 button {
-    margin-top: 20px; /* Add some space between the textarea and the button */
-    align-self: center; /* Center the button horizontally */
-    width: 500px; /* Set the width of the button */
-    background-color: black; /* Set the background color of the button */
-    color: white; /* Set the text color of the button */
+    margin-top: 20px;
+    align-self: center;
+    width: 500px;
+    background-color: black;
+    color: white;
 }

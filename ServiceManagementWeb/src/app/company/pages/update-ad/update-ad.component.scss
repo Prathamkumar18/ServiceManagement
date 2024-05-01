@@ -1,8 +1,17 @@
+.bg {
+    background-color: #f8f8f8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .parent {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust as needed */
+    height: 100vh;
+    text-align: center;
 }
 
 .child {
@@ -10,7 +19,7 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px; /* Adjust as needed */
+    width: 400px;
 }
 
 .imgDiv {
@@ -21,10 +30,12 @@
     margin-bottom: 20px;
 }
 
-.file-upload-container span {
+.file-upload-label span {
     display: block;
-    text-align: center; /* Center the label */
-    margin-bottom: 10px; /* Add margin between label and input */
+    text-align: center;
+    margin-bottom: 10px;
+    color: #1890ff;
+    cursor: pointer;
 }
 
 .image-preview {
@@ -32,34 +43,55 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    height: 150px; /* Set a fixed height to align vertically */
+    height: 150px;
 }
 
 .circle-image {
     margin-left: 80px;
-    width: 180px; /* Adjust as needed */
-    height: 180px; /* Adjust as needed */
-    border-radius: 50%; /* Make the shape circular */
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
     overflow: hidden;
-    border: 1px solid #ccc; /* Add border to the image */
-    display: flex; /* Ensure flex container for centering */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
 .preview-image {
-    max-width: 100%; /* Ensure image fits within container */
-    max-height: 100%; /* Ensure image fits within container */
+    max-width: 100%;
+    max-height: 100%;
     display: block;
 }
 
-.login-form {
-    max-width: 100%;
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-field:focus {
+    border-color: #1890ff;
 }
 
 .login-form-button {
     width: 100%;
-    background-color: black;
+    background-color: #000000;
+    color: #fff;
     margin-top: 20px;
+}
+
+.login-form-button:hover {
+    background-color: #40a9ff;
+}
+
+h2 {
+    cursor: pointer;
+    color: #000000;
+    margin-left: 120px;
+    margin-bottom: 10px;
+    text-align: right;
 }

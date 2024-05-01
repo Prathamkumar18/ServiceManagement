@@ -1,29 +1,23 @@
-<div class="bg">
-    <div class="parent">
-        <div class="child">
-            <div nz-col>
-                <h1 style="margin-left:55px">Login</h1>
-            </div>
-            <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
-                <nz-form-item>
-                    <nz-form-control nzErrorTip="Please input your email">
-                        <nz-input-group>
-                            <input type="text" nz-input placeholder="E-mail" formControlName="userName"/>
-                        </nz-input-group>
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-control nzErrorTip="Please input your Password">
-                        <nz-input-group>
-                            <input type="password" nz-input placeholder="Password" formControlName="password"/>
-                        </nz-input-group>
-                    </nz-form-control>
-                </nz-form-item>
-                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
-                    Login
-                </button>
-                <a routerLink="/register">register now!</a>
-            </form>
-        </div>
+<div class="login-container">
+    <div class="login-content">
+        <h1 class="login-title">Welcome Back!</h1>
+        <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please input your email">
+                    <nz-input-group>
+                        <input type="text" nz-input placeholder="E-mail" formControlName="userName"/>
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please input your Password">
+                    <nz-input-group>
+                        <input type="password" nz-input placeholder="Password" formControlName="password"/>
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <button nz-button class="login-form-button" [nzType]="'primary'">Login</button>
+            <p class="register-link">Don't have an account? <a routerLink="/register">Register now!</a></p>
+        </form>
     </div>
 </div>

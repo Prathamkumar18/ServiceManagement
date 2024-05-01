@@ -1,67 +1,86 @@
-/* Styles for the background */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
 .bg {
-    background-color: #f0f2f5; /* Set your desired background color */
-    padding: 20px; /* Adjust padding as needed */
+    background-color: #f8f9fa;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Styles for the parent container */
 .parent {
-    max-width: 400px; /* Adjust as needed */
-    margin: 0 auto; /* Center the container */
-    background-color: #fff; /* Set background color */
-    padding: 20px; /* Adjust padding as needed */
-    border-radius: 8px; /* Add rounded corners */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for the form */
 .child {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-/* Styles for the form items */
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
 nz-form-item {
-    margin-bottom: 15px; /* Adjust spacing between form items */
+    margin-bottom: 20px;
 }
 
-/* Styles for the form controls */
 nz-form-control {
     width: 100%;
 }
 
-/* Styles for the input fields */
 input {
     width: 100%;
-    padding: 10px; /* Adjust padding as needed */
-    border: 1px solid #d9d9d9; /* Set border color */
-    border-radius: 4px; /* Add rounded corners */
-    transition: border-color 0.3s ease; /* Add transition effect */
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
 input:focus {
-    border-color: #1890ff; /* Change border color on focus */
+    border-color: #007bff;
 }
 
-/* Styles for the button */
-button {
+.submit-button {
     width: 100%;
-    padding: 10px; /* Adjust padding as needed */
+    max-width: 400px;
+    padding: 12px;
     border: none;
-    border-radius: 4px; /* Add rounded corners */
-    background-color: #000; /* Set button background color to black */
-    color: #fff; /* Set button text color */
+    border-radius: 6px;
+    line-height: 0;
+    background-color: #000000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Add transition effect */
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #333; /* Change button background color on hover */
+.submit-button:hover {
+    background-color: #0056b3;
 }
 
-/* Styles for the login link */
-a {
-    display: block;
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
     text-align: center;
-    margin-top: 10px; /* Adjust margin as needed */
+    max-width: 400px;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
 }

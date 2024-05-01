@@ -1,18 +1,18 @@
 .bg {
-    background-color: #f0f0f0; /* Light gray background color */
+    background-color: #f0f0f0;
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Ensure child elements don't overflow */
+    border-radius: 10px;
+    overflow: hidden;
 
     .child {
         margin-top: 10px;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         padding: 10px;
-        background-color: #fff; /* White background color */
-        overflow: hidden; /* Ensure child elements don't overflow */
+        background-color: #fff;
+        overflow: hidden;
 
         .row {
             display: flex;
@@ -39,29 +39,85 @@
             text-align: right;
 
             button {
-                background-color: #108ee9; /* Blue button background color */
-                border-color: #108ee9; /* Blue button border color */
-                color: #fff; /* White text color */
+                background-color: #108ee9;
+                border-color: #108ee9;
+                color: #fff;
+                font-family: 'Arial', sans-serif;
             }
         }
 
         h2 {
             font-size: 18px;
-            color: #108ee9; /* Blueish color for service name */
+            color: #108ee9;
+            font-family: 'Arial', sans-serif;
         }
 
         h5 {
             font-size: 14px;
+            font-family: 'Arial', sans-serif;
         }
     }
 
     &.empty {
         .child {
             text-align: center;
-            color: #555; /* Dark gray text color */
+            color: #555;
             font-size: 18px;
             padding: 20px;
             margin: 10px 0;
+            font-family: 'Arial', sans-serif;
+        }
+    }
+}
+
+.ads-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ad-card {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+    .ad-image {
+        img {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    }
+
+    .ad-content {
+        padding: 20px;
+
+        h2 {
+            font-size: 18px;
+            color: #1890ff;
+            margin-bottom: 10px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h5 {
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .button-container {
+            text-align: right;
+
+            button {
+                background-color: #000000;
+                border-color: #1890ff;
+                color: #fff;
+                font-family: 'Arial', sans-serif;
+            }
         }
     }
 }

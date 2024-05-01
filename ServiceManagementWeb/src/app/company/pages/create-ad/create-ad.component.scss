@@ -1,11 +1,63 @@
-.parent {
+.container {
     width: 100%;
-    max-width: 600px; /* Reduce the max-width of the box */
+    max-width: 600px;
     margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f2f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
 
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
 
-.login-form-button {
+.profile-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-label {
+    cursor: pointer;
+}
+
+.profile {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.submit-button {
     width: 100%;
-    background-color: black; /* Change button color to black */
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 0;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
 }

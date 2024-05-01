@@ -1,25 +1,23 @@
 <div class="bg">
-    <div nz-row>
-        <h2 style="color: black;">Ads</h2>
+    <div nz-row class="heading">
+        <h2>Ads</h2>
     </div>
-    <div style="margin-top:10px;" class="child" *ngFor="let ad of ads">
-        <div nz-row>
+    <div class="child" *ngFor="let ad of ads">
+        <div nz-row class="ad-container">
             <div nz-col nzSpan="8">
-                <img class="profile" [src]="updateImage(ad.returnedImg)" style="height: 130px; width: 180px; border-radius: 10px;"/>
+                <img class="profile" [src]="updateImage(ad.returnedImg)" alt="Ad Image"/>
             </div>
             <div nz-col nzSpan="16">
-                <h2 style="cursor:pointer; color: #108ee9;">
-                    {{ad.serviceName}}
-                </h2>
+                <h2>{{ad.serviceName}}</h2>
                 <hr>
-                <h5>Price:<b>{{ad.price}}</b></h5>
-                <h5>Description:<b>{{ad.description}}</b></h5>
-                <h5 *ngIf="ad.averageRating===null">Rating: No ratings yet</h5>
+                <h5>Price: <b>{{ad.price}}</b></h5>
+                <h5>Description: <b>{{ad.description}}</b></h5>
+                <h5 *ngIf="ad.averageRating === null">Rating: No ratings yet</h5>
                 <h5 *ngIf="ad.averageRating !== null">Rating: {{ ad.averageRating }}</h5>
                 <hr>
-                <div style="float:right;">
+                <div class="actions">
                     <button nzSize="small" nz-button nzType="primary" routerLink="/company/update/{{ad.id}}">Update</button>
-                    <button style="margin-left:10px" nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteAd(ad.id)">Delete</button>
+                    <button nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteAd(ad.id)">Delete</button>
                 </div>
             </div>
         </div>

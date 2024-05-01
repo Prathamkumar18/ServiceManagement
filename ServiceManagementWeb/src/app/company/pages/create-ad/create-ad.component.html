@@ -1,46 +1,24 @@
-<div style="background-color: #f8f8f8;">
-    <div class="parent">
-        <div class="child">
-            <div nz-row class="imgDiv">
-                <h2 style="margin-left:230px">Create Ad</h2>
-            </div>
-            <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="postAd()">
-                <div nz-row>
-                    <div nz-col [nzMd]="24" [nzSm]="24" [nzXs]="24">
-                        <div class="profile-badge">
-                            <label for="upload_profile_image" class="upload-label" *ngIf="selectedFile">
-                                <img class="profile" [src]="imagePreview" alt="profile" height="200" width="200"/>
-                            </label>
-                            <input type="file" nz-button nzType="primary" accept="image/x-png,image/gif,image/jpeg" (change)="onFileSelected($event)"/>
-                            <button nz-button nzShape="circle"></button>
-                        </div>
-                    </div>
-                    <div nz-col nzSpan="24">
-                        <nz-form-item>
-                            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is required!">
-                                <input nz-input placeholder="Service Name" formControlName="serviceName"/>
-                            </nz-form-control>
-                        </nz-form-item>
-                    </div>
-                    <div nz-col nzSpan="24">
-                        <nz-form-item>
-                            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is required!">
-                                <input nz-input placeholder="Price" formControlName="price" type="number"/>
-                            </nz-form-control>
-                        </nz-form-item>
-                    </div>
-                    <div nz-col nzSpan="24">
-                        <nz-form-item>
-                            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is required!">
-                                <textarea nz-input placeholder="Description" formControlName="description"></textarea>
-                            </nz-form-control>
-                        </nz-form-item>
-                    </div>
-                </div>
-                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
-                    Add
-                </button>
-            </form>
-        </div>
+<div class="container">
+    <div class="header">
+        <h2>Create Ad</h2>
     </div>
+    <form class="form" [formGroup]="validateForm" (ngSubmit)="postAd()">
+        <div class="profile-badge">
+            <input type="file" nz-button nzType="primary" accept="image/x-png,image/gif,image/jpeg" (change)="onFileSelected($event)"/>
+            <button nz-button nzShape="circle"></button>
+            <label for="upload_profile_image" class="upload-label" *ngIf="selectedFile">
+                <img class="profile" [src]="imagePreview" alt="profile"/>
+            </label>
+        </div>
+        <div class="form-group">
+            <input nz-input placeholder="Service Name" formControlName="serviceName"/>
+        </div>
+        <div class="form-group">
+            <input nz-input placeholder="Price" formControlName="price" type="number"/>
+        </div>
+        <div class="form-group">
+            <textarea nz-input placeholder="Description" formControlName="description"></textarea>
+        </div>
+        <button nz-button class="submit-button" [nzType]="'primary'">Add</button>
+    </form>
 </div>

@@ -1,59 +1,87 @@
-.bg {
-    background-color: #f0f2f5;
-    padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.parent {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.child {
+.login-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.login-content {
+    max-width: 400px;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-title {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.login-form {
+    margin-bottom: 0;
 }
 
 nz-form-item {
-    margin-bottom: 15px;
-}
-
-nz-form-control {
-    width: 100%;
+    margin-bottom: 20px;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
+    width: calc(100% - 32px);
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
     transition: border-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
 }
 
 input:focus {
     border-color: #1890ff;
 }
 
-button {
-    width: 100%;
-    padding: 5px;
+button.login-form-button {
+    width: calc(100% - 32px);
+    padding: 15px;
     border: none;
-    border-radius: 4px;
-    background-color: #000;
+    border-radius: 6px;
+    background-color: #000000;
     color: #fff;
+    font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    line-height:0;
 }
 
-button:hover {
-    background-color: #333;
+button.login-form-button:hover {
+    background-color: #6f65b0;
 }
 
-a {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
+.register-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #1890ff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
 }

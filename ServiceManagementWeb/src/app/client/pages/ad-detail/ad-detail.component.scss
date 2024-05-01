@@ -1,8 +1,8 @@
 .bg {
     background-color: #f8f8f8;
     padding: 20px;
-    max-width: 800px; // Adjust as needed
-    margin: 0 auto; // Center the container horizontally
+    max-width: 800px;
+    margin: 0 auto;
 
     .ad-details-container {
         .top-section {
@@ -20,29 +20,38 @@
                     border-radius: 10px;
                 }
 
-                nz-col {
-                    flex: 1; // Take remaining space
-                    margin-left: 20px; // Add some space between the image and details
-                }
+                .details {
+                    margin-left: 20px;
 
-                h2 {
-                    cursor: pointer;
-                    color: #108ee9;
-                    margin-bottom: 10px; // Add some space below the heading
+                    h2 {
+                        cursor: pointer;
+                        color: #108ee9;
+                        margin-bottom: 10px;
+                    }
+
+                    h5 {
+                        margin-bottom: 5px;
+                    }
                 }
             }
 
             .book-service {
-                flex: 1; // Take remaining space
-                margin-left: 20px; // Add some space between the details and book service section
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                nz-form-item {
+                    margin-bottom: 10px;
+                }
             }
         }
 
         .reviews-section {
-            margin-top: 20px; // Add some space above the reviews section
+            margin-top: 20px;
 
             .review-card {
-                margin-top: 20px; // Add some space between each review card
+                margin-top: 20px;
             }
         }
     }
