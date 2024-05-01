@@ -20,6 +20,7 @@ public class Ad {
     @Lob
     @Column(columnDefinition = "longblob")
     private byte[] img;
+    private Double averageRating;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -33,6 +34,7 @@ public class Ad {
         adDTO.setPrice(price);
         adDTO.setCompanyName(user.getName());
         adDTO.setReturnedImg(img);
+        adDTO.setAverageRating(averageRating);
         return adDTO;
     }
 }

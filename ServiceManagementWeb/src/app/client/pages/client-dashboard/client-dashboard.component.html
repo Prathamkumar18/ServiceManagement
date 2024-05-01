@@ -13,6 +13,8 @@
                 <hr>
                 <h5>Price: <b>{{ad.price}}</b></h5>
                 <h5>Description: <b>{{ad.description}}</b></h5>
+                <h5 *ngIf="ad.averageRating===null">Rating: No ratings yet</h5>
+                <h5 *ngIf="ad.averageRating !== null">Rating: {{ ad.averageRating }}</h5>
                 <hr>
                 <div class="button-container">
                     <button nzSize="small" nz-button nzType="primary" routerLink="/client/ad/{{ad.id}}">View</button>

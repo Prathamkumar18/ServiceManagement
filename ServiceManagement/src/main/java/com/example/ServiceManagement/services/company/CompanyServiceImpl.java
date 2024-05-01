@@ -37,6 +37,7 @@ public class CompanyServiceImpl implements CompanyService {
             ad.setPrice(adDTO.getPrice());
             ad.setImg(adDTO.getImg().getBytes());
             ad.setUser(optionalUser.get());
+            ad.setAverageRating(null);
             adRepository.save(ad);
             return true;
         }

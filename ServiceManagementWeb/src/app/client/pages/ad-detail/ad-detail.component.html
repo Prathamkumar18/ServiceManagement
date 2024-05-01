@@ -5,11 +5,11 @@
                 <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" [src]="avatarUrl" alt="profile"/>
                 <div nz-col nzSpan="16">
                     <h2 style="cursor: pointer; color: #108ee9;">{{ad.serviceName}}</h2>
-                    <h5>Price:<b>{{ad.price}}</b></h5>
-                    <h5>
-                        Description:<b>{{ad.description}}</b> - Company Name :
-                        <b>{{ad.companyName}}</b>
-                    </h5>
+                    <h5>Price: <b>{{ad.price}}</b></h5>
+                    <h5>Description: <b>{{ad.description}}</b></h5>
+                    <h5>Company Name: <b>{{ad.companyName}}</b></h5>
+                    <h5 *ngIf="ad.averageRating===null">Rating: <b>No ratings yet!</b></h5>
+                <h5 *ngIf="ad.averageRating !== null">Rating: {{ ad.averageRating }}</h5>
                 </div>
             </div>
             <div class="book-service">

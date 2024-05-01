@@ -17,6 +17,7 @@ import com.example.ServiceManagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -88,6 +89,15 @@ public class ClientServiceImpl implements ClientService {
             Reservation booking = optionalReservation.get();
             booking.setReviewStatus(ReviewStatus.TRUE);
             reservationRepository.save(booking);
+            //updating average rating:
+            Long adId=review.getAd().getId();
+            Optional<Ad> optionalAd=adRepository.findById(adId);
+            Double averageRating=optionalAd.get().getAverageRating();
+            Long rating=reviewDTO.getRating();
+            if(averageRating==null)averageRating= rating.doubleValue();
+            else averageRating=(Double) (rating.doubleValue() + averageRating)/2.0;
+            optionalAd.get().setAverageRating(averageRating);
+            adRepository.save(optionalAd.get());
             return true;
         }
         return false;
