@@ -21,4 +21,6 @@ public interface ClientService {
     boolean giveReview(ReviewDTO reviewDTO);
 
     List<AdDTO> getAllAdsSorted(String category,String sortBy);
+
+    Long getPriceByAdId(Long adId);
 }

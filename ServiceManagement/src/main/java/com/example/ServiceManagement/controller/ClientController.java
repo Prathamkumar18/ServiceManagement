@@ -56,4 +56,10 @@ public class ClientController {
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
+
+
+    @GetMapping("ad/price/{adId}")
+    public ResponseEntity<?> getPriceByAdId(@PathVariable Long adId) {
+        return ResponseEntity.ok(clientService.getPriceByAdId(adId));
+    }
 }

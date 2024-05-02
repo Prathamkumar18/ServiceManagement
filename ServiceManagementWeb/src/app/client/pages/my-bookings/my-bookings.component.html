@@ -20,7 +20,7 @@
             }
             @else {
                 @if (booking.paidAmount==-1) {
-                    <td><button style="margin-top: 15px;  width: 120px;" nzSize="small" nz-button nzType="primary" nzDanger routerLink="/client/pay/{{booking.id}}">Pay</button></td>
+                    <td><button style="margin-top: 15px;  width: 120px;" nzSize="small" nz-button nzType="primary" nzDanger routerLink="/client/pay/{{booking.id}}/{{booking.adId}}">Pay</button></td>
                 }
                 @else {
                     <td>

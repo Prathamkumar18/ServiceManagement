@@ -110,4 +110,9 @@ public class ClientServiceImpl implements ClientService {
         }
         return false;
     }
+
+    public Long getPriceByAdId(Long adId) {
+        Long price = adRepository.findPriceByAdId(adId);
+        return price;
+    }
 }
