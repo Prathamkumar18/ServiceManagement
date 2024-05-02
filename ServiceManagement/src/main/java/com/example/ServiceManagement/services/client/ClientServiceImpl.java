@@ -57,6 +57,7 @@ public class ClientServiceImpl implements ClientService {
             Reservation reservation = new Reservation();
             reservation.setBookDate(reservationDTO.getBookDate());
             reservation.setReservationStatus(ReservationStatus.PENDING);
+            reservation.setPaidAmount(-1L);
             reservation.setUser(optionalUser.get());
             reservation.setAd(optionalAd.get());
             reservation.setCompany(optionalAd.get().getUser());

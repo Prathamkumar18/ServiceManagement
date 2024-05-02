@@ -35,7 +35,7 @@
                         <input nz-input placeholder="Phone" formControlName="phone" id="phone"/>
                     </nz-form-control>
                 </nz-form-item>
-                <button nz-button class="submit-button" [nzType]="'primary'">
+                <button nz-button class="submit-button" [nzType]="'primary'" [disabled]="validateForm.invalid">
                     Register
                 </button>
                 <p class="login-link">Already have an account? <a routerLink="/login">Login now!</a></p>

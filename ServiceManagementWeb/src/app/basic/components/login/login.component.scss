@@ -66,11 +66,14 @@ button.login-form-button {
     font-family: 'Roboto', sans-serif;
     outline: none;
     line-height:0;
+    &:disabled{
+        background-color: grey;
+    }
 }
 
-button.login-form-button:hover {
-    background-color: #6f65b0;
-}
+// button.login-form-button:hover {
+//     background-color: #6f65b0;
+// }
 
 .register-link {
     margin-top: 20px;

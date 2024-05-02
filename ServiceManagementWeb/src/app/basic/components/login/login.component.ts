@@ -20,7 +20,7 @@ export class LoginComponent {
 
   ngOnInit() {
     this.validateForm = new FormGroup({
-      userName: new FormControl(null, [Validators.required]),
+      userName: new FormControl(null, [Validators.required,Validators.email]),
       password: new FormControl(null, [Validators.required]),
     });
   }

@@ -63,6 +63,9 @@ input:focus {
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    &:disabled{
+        background-color: grey;
+    }
 }
 
 .submit-button:hover {

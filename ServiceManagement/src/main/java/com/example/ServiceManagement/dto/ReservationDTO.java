@@ -18,6 +18,7 @@ public class ReservationDTO {
     private String serviceName;
     private ReservationStatus reservationStatus;
     private ReviewStatus reviewStatus;
+    private Long paidAmount;
     private Long userId;
     private String userName;
     private Long companyId;
