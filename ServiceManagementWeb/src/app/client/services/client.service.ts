@@ -48,8 +48,21 @@ export class ClientService {
     });
   }
 
+  getPriceByAdId(adId:any): Observable<any> {
+    return this.http.get(BASIC_URL + `api/client/ad/price/${adId}`, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
+
   giveReview(reviewDTO: any): Observable<any> {
     return this.http.post(BASIC_URL + `api/client/review`, reviewDTO, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
+  payAmount(bookId: any,amount:number): Observable<any> {
+    return this.http.post(BASIC_URL + `api/client/payment/${bookId}`,amount , {
       headers: this.createAuthorizationHeader(),
     });
   }

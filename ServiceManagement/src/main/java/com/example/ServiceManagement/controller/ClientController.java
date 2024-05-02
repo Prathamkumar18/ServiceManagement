@@ -57,9 +57,17 @@ public class ClientController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-
     @GetMapping("ad/price/{adId}")
     public ResponseEntity<?> getPriceByAdId(@PathVariable Long adId) {
         return ResponseEntity.ok(clientService.getPriceByAdId(adId));
+    }
+
+    @PostMapping("/payment/{bookId}")
+    public ResponseEntity<?> payAmount(@PathVariable Long bookId,@RequestBody Long amount) {
+        boolean success = clientService.payAmount(bookId,amount);
+        if (success) {
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }

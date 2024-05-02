@@ -9,6 +9,7 @@ import { DemoNgZorroAntdModule } from '../DemoNgZorroAntdModule';
 import { AdDetailComponent } from './pages/ad-detail/ad-detail.component';
 import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
 import { ReviewComponent } from './pages/review/review.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ReviewComponent } from './pages/review/review.component';
     AdDetailComponent,
     MyBookingsComponent,
     ReviewComponent,
+    PaymentComponent,
   ],
   imports: [
     CommonModule,

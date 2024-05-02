@@ -26,6 +26,6 @@ public interface AdRepository extends JpaRepository<Ad, Long> {
     @Query(value = "select * from ads a order by a.average_rating desc",nativeQuery = true)
     List<Ad> findAllAdsSortByAverageRatingDesc();
 
-    @Query(value = "select price from ads a where a.ad_id=:adId",nativeQuery = true)
+    @Query(value = "select price from ads a where a.id=:adId",nativeQuery = true)
     Long findPriceByAdId(Long adId);
 }

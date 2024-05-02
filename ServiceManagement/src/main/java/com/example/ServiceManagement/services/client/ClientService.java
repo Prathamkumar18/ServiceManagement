@@ -23,4 +23,6 @@ public interface ClientService {
     List<AdDTO> getAllAdsSorted(String category,String sortBy);
 
     Long getPriceByAdId(Long adId);
+
+    boolean payAmount(Long bookId,Long amount);
 }

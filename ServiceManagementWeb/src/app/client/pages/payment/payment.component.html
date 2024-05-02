@@ -1,0 +1,33 @@
+<div class="payment-container">
+    <div class="coupon-section">
+        <h3>Coupon</h3>
+        <div class="coupon-input">
+            <input type="text" placeholder="Enter coupon code" [(ngModel)]="couponCode">
+            <button class="apply-btn" (click)="applyCoupon()">Apply</button>
+        </div>
+        <p [ngStyle]="{'color': couponMessage === 'invalid coupon!' ? 'red' : 'green'}">{{ couponMessage }}</p>
+        <div class="available-coupons">
+            <h4>Available Coupons:</h4>
+            <ul>
+                <li>SAVE10 - Save 10%</li>
+                <li>GET20 - Get Rs. 20 off</li>
+            </ul>
+        </div>
+    </div>
+    <div class="amount-section">
+        <h3>Amount to be Paid</h3>
+        <div class="amount-details">
+            <span>Original Amount:</span>
+            <span>Rs. {{originalAmount}}</span>
+        </div>
+        <div class="amount-details">
+            <span>Discount:</span>
+            <span>Rs. {{discountAmount}}</span>
+        </div>
+        <div class="amount-details">
+            <span>Total Amount:</span>
+            <span class="total-amount">Rs. {{totalAmount}}</span>
+        </div>
+    </div>
+    <button class="pay-btn" (click)="payAmount()">Pay Now</button>
+</div>

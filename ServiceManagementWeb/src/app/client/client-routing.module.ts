@@ -5,6 +5,7 @@ import { ClientDashboardComponent } from './pages/client-dashboard/client-dashbo
 import { AdDetailComponent } from './pages/ad-detail/ad-detail.component';
 import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
 import { ReviewComponent } from './pages/review/review.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 const routes: Routes = [
   { path: '', component: ClientComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'ad/:adId', component: AdDetailComponent },
   { path: 'bookings', component: MyBookingsComponent },
   { path: 'review/:id', component: ReviewComponent },
+  { path: 'payment/:id/:adId', component: PaymentComponent },
 ];
 
 @NgModule({

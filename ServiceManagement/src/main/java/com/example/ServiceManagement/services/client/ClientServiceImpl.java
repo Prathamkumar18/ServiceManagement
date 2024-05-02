@@ -115,4 +115,14 @@ public class ClientServiceImpl implements ClientService {
         Long price = adRepository.findPriceByAdId(adId);
         return price;
     }
+
+    public boolean payAmount(Long bookId,Long amount){
+        Optional<Reservation> optionalReservation=reservationRepository.findById(bookId);
+        if(optionalReservation.isPresent()){
+            optionalReservation.get().setPaidAmount(amount);
+            reservationRepository.save(optionalReservation.get());
+            return true;
+        }
+        return false;
+    }
 }

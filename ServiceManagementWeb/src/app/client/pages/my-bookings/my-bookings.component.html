@@ -20,12 +20,12 @@
             }
             @else {
                 @if (booking.paidAmount==-1) {
-                    <td><button style="margin-top: 15px;  width: 120px;" nzSize="small" nz-button nzType="primary" nzDanger routerLink="/client/pay/{{booking.id}}/{{booking.adId}}">Pay</button></td>
+                    <td><button style="margin-top: 15px;  width: 120px;" nzSize="small" nz-button nzType="primary" nzDanger routerLink="/client/payment/{{booking.id}}/{{booking.adId}}">Pay</button></td>
                 }
                 @else {
                     <td>
                         Amount paid: Rs.{{booking.paidAmount}}
-                        <button style="margin-left: 15px; margin-top: 15px;" nzSize="small" nz-button nzType="primary" nzDanger routerLink="/client/review/{{booking.id}}">Review</button>
+                        <button style="margin-left: 15px; margin-top: 15px;" nzSize="small" nz-button nzType="primary" nzDanger routerLink="/client/review/{{booking.id}}" *ngIf="booking.reviewStatus==='FALSE'">Review</button>
                     </td>
                 }
             }
